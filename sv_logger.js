@@ -21,7 +21,7 @@ function getTimestamp(forFilename) {
 
 function openStream(){
     filename = GetResourcePath(GetCurrentResourceName()) + '/logs/' + getTimestamp(true) + '.log';
-    stream = fs.createWriteStream(getFilename(), {flags: 'a'});
+    stream = fs.createWriteStream(filename, {flags: 'a'});
     stream.write(`[${getTimestamp()}] Opened logfile ${filename}\n`);
     day = new Date().getDate();
 }
